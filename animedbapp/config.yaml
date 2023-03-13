@@ -3,14 +3,15 @@ applications:
   - animedb
   - guillotina.contrib.catalog.pg
   - guillotina.contrib.swagger
+  - guillotina.contrib.dbusers
 databases:
   db:
     #storage: postgresql
     storage: DUMMY_FILE
     filename: data_file.db
     #dsn: postgresql://postgres@localhost:5432/guillotina
-    #read_only: false
-host: 0.0.0.0
+    read_only: false
+host: "*"
 port: 8282
 root_user:
   password: root
