@@ -19,9 +19,19 @@ class FolderAnime(content.Folder):
 
 ##Content Class Layout_User StartHere
 class IAnime(IFolderAnime):
-    id = schema.Int()
-    anime_name = schema.TextLine()
-    description = schema.TextLine()
+    id_mal = schema.Int()
+    title = schema.TextLine()
+    alternative_titles = schema.TextLine()
+    start_date = schema.Date()
+    end_date = schema.Date()
+    synopsis = schema.Text()
+    genres = schema.List()
+    num_episodes = schema.Int()
+    year = schema.Int()
+    season = schema.TextLine()
+    source = schema.TextLine()
+    rating = schema.TextLine()
+    local_location = schema.TextLine()
 
 @configure.contenttype(
     type_name="Anime",
@@ -29,6 +39,6 @@ class IAnime(IFolderAnime):
     #behaviors=["guillotina.behaviors.dublincore.IDublinCore"],
     globally_addable = True
 )
-class Anime(content.Item):
+class Anime(FolderAnime):
     pass
 ##Content Class Layout_User StopHere
